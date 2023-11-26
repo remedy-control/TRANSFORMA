@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://10.191.104.76:1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?WSDL" uri="wsdl/10.191.104.76_1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://10.191.104.76:1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl" uri="wsdl/10.191.104.76_1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://10.191.104.76:1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0" uri="wsdl/10.191.104.76_1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd0.xsd"/>
+    <system systemId="http://10.191.104.76:1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1" uri="wsdl/10.191.104.76_1710/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd1.xsd"/>
+    <system systemId="http://10.191.104.76:1712/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl" uri="wsdl/10.191.104.76_1712/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://10.191.104.76:1712/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0" uri="wsdl/10.191.104.76_1712/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd0.xsd"/>
+    <system systemId="http://10.191.104.76:1712/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1" uri="wsdl/10.191.104.76_1712/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd1.xsd"/>
+    <system systemId="http://10.191.104.76:1714/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl" uri="wsdl/10.191.104.76_1714/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://10.191.104.76:1714/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0" uri="wsdl/10.191.104.76_1714/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd0.xsd"/>
+    <system systemId="http://10.191.104.76:1714/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1" uri="wsdl/10.191.104.76_1714/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd1.xsd"/>
+    <system systemId="http://iib.telcel.com:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl" uri="wsdl/iib.telcel.com_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://iib.telcel.com:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0" uri="wsdl/iib.telcel.com_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd0.xsd"/>
+    <system systemId="http://iib.telcel.com:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1" uri="wsdl/iib.telcel.com_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd1.xsd"/>
+    <system systemId="http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl" uri="wsdl/10.191.133.210_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0" uri="wsdl/10.191.133.210_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd0.xsd"/>
+    <system systemId="http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1" uri="wsdl/10.191.133.210_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd1.xsd"/>
+    <system systemId="http://10.191.133.210:1722/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl" uri="wsdl/10.191.133.210_1722/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl"/>
+    <system systemId="http://10.191.133.210:1722/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0" uri="wsdl/10.191.133.210_1722/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd0.xsd"/>
+    <system systemId="http://10.191.133.210:1722/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1" uri="wsdl/10.191.133.210_1722/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.xsd_xsd1.xsd"/>
+</catalog>

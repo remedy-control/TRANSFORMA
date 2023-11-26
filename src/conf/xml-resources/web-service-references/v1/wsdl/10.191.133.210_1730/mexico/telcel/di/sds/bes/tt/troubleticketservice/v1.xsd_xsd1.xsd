@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><!--File americamovil_telcel_v1_2.xsd, application D16_Trouble_Ticket_v2_TTI001--><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://amx.com/mexico/telcel/esb/v1_2" xmlns:tlc="http://amx.com/mexico/telcel/esb/v1_2">
+     <xs:annotation>
+          <xs:documentation>Version del Esquema Corporativo: 1.2.0</xs:documentation>
+     </xs:annotation>
+     
+     <xs:simpleType name="CadenaAlfanumerica24Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="24"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica128Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="128"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="MessageUUIDType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="128"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="DateTimeType">
+          <xs:restriction base="xs:dateTime"/>
+     </xs:simpleType>
+     <xs:simpleType name="SenderType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="3"/>
+               <xs:maxLength value="32"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="IPv4AddressType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="7"/>
+               <xs:maxLength value="15"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="UserType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="16"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica20Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="20"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica1024Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="1024"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="BesCbsLanguageCodeType">
+          <xs:restriction base="xs:string">
+               <xs:length fixed="true" value="4"/>
+               <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="LatencyType">
+          <xs:restriction base="xs:int"/>
+     </xs:simpleType>
+     <xs:simpleType name="CodeType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="32"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="SeverityType">
+          <xs:restriction base="xs:int"/>
+     </xs:simpleType>
+     <xs:simpleType name="DescriptionType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="1024"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="ActorType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="32"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="MeaningType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="1024"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaType">
+          <xs:restriction base="xs:string"/>
+     </xs:simpleType>
+     <xs:simpleType name="Decimal20Type">
+          <xs:restriction base="xs:decimal">
+               <xs:totalDigits value="20"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="BesCrmChannelType">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="20"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="BesCbsBEIDType">
+          <xs:restriction base="xs:string"/>
+     </xs:simpleType>
+     <xs:simpleType name="BesCbsBRIDType">
+          <xs:restriction base="xs:string"/>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica1a20Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="1"/>
+               <xs:maxLength value="20"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica25Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="25"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica4096Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="4096"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="BesCbsTimeZoneType">
+          <xs:restriction base="xs:string"/>
+     </xs:simpleType>
+     
+     <xs:complexType name="ControlDataRequestHeaderType">
+          <xs:sequence>
+               <xs:element name="version" type="tlc:CadenaAlfanumerica24Type"/>
+               <xs:element minOccurs="0" name="businessCode" type="tlc:CadenaAlfanumerica128Type"/>
+               <xs:element name="messageUUID" type="tlc:MessageUUIDType"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="additionalProperty" type="tlc:BesAdditionalPropertyType"/>
+               <xs:element name="requestDate" type="tlc:DateTimeType"/>
+               <xs:element name="sendBy" type="tlc:SenderType"/>
+               <xs:element minOccurs="0" name="ipClient" type="tlc:IPv4AddressType"/>
+               <xs:element minOccurs="0" name="ipServer" type="tlc:IPv4AddressType"/>
+               <xs:element minOccurs="0" name="user" type="tlc:UserType"/>
+               <xs:element minOccurs="0" name="besCbsRequestHeader" type="tlc:BesCbsRequestHeaderType"/>
+               <xs:element minOccurs="0" name="besCrmRequestHeader" type="tlc:BesCrmRequestHeaderType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="ControlDataResponseHeaderType">
+          <xs:sequence>
+               <xs:element name="version" type="tlc:CadenaAlfanumerica24Type"/>
+               <xs:element name="resultCode" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element name="resultDesc" type="tlc:CadenaAlfanumerica1024Type"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="additionalProperty" type="tlc:BesAdditionalPropertyType"/>
+               <xs:element minOccurs="0" name="msgLanguageCode" type="tlc:BesCbsLanguageCodeType"/>
+               <xs:element name="messageUUID" type="tlc:MessageUUIDType"/>
+               <xs:element name="responseDate" type="tlc:DateTimeType"/>
+               <xs:element name="sendBy" type="tlc:SenderType"/>
+               <xs:element name="latency" type="tlc:LatencyType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="DetailResponseType">
+          <xs:sequence>
+               <xs:element name="code" type="tlc:CodeType"/>
+               <xs:element minOccurs="0" name="severityLevel" type="tlc:SeverityType"/>
+               <xs:element name="description" type="tlc:DescriptionType"/>
+               <xs:element minOccurs="0" name="actor" type="tlc:ActorType"/>
+               <xs:element minOccurs="0" name="businessMeaning" type="tlc:MeaningType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="ErrorType">
+          <xs:sequence>
+               <xs:element name="code" type="tlc:CodeType"/>
+               <xs:element name="severityLevel" type="tlc:SeverityType"/>
+               <xs:element name="description" type="tlc:DescriptionType"/>
+               <xs:element minOccurs="0" name="actor" type="tlc:ActorType"/>
+               <xs:element name="businessMeaning" type="tlc:MeaningType"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="properties" type="tlc:PropertyErrorType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="DetailFailType">
+          <xs:sequence>
+               <xs:element minOccurs="0" name="operationName" type="tlc:CadenaAlfanumerica128Type"/>
+               <xs:element maxOccurs="unbounded" name="errors" type="tlc:ErrorType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesAdditionalPropertyType">
+          <xs:sequence>
+               <xs:element name="code" type="tlc:CadenaAlfanumerica128Type"/>
+               <xs:element name="value" type="tlc:CadenaAlfanumerica128Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesCbsRequestHeaderType">
+          <xs:sequence>
+               <xs:element minOccurs="0" name="ownershipInfo" type="tlc:BesCbsOwnershipInfoType"/>
+               <xs:element minOccurs="0" name="operatorInfo" type="tlc:BesCbsOperatorInfoType"/>
+               <xs:element minOccurs="0" name="accessMode" type="tlc:CadenaType"/>
+               <xs:element minOccurs="0" name="msgLanguageCode" type="tlc:CadenaType"/>
+               <xs:element minOccurs="0" name="timeFormat" type="tlc:BesCbsTimeFormatType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesCrmRequestHeaderType">
+          <xs:sequence>
+               <xs:element name="beId" type="tlc:Decimal20Type"/>
+               <xs:element name="regionId" type="tlc:Decimal20Type"/>
+               <xs:element minOccurs="0" name="operatorInfo" type="tlc:BesCrmOperatorInfoType"/>
+               <xs:element name="channelType" type="tlc:BesCrmChannelType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesCbsOperatorInfoType">
+          <xs:sequence>
+               <xs:element name="operatorID" type="tlc:CadenaType"/>
+               <xs:element minOccurs="0" name="channelID" type="tlc:CadenaType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesCbsOwnershipInfoType">
+          <xs:sequence>
+               <xs:element name="BEID" type="tlc:BesCbsBEIDType"/>
+               <xs:element minOccurs="0" name="BRID" type="tlc:BesCbsBRIDType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesCrmOperatorInfoType">
+          <xs:sequence>
+               <xs:element name="operatorCode" type="tlc:CadenaAlfanumerica1a20Type"/>
+               <xs:element name="orgId" type="tlc:Decimal20Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="PropertyErrorType">
+          <xs:sequence>
+               <xs:element name="key" type="tlc:CadenaAlfanumerica25Type"/>
+               <xs:element name="value" type="tlc:CadenaAlfanumerica4096Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="BesCbsTimeFormatType">
+          <xs:sequence>
+               <xs:element name="timeType" type="tlc:CadenaType"/>
+               <xs:element minOccurs="0" name="timeZoneID" type="tlc:BesCbsTimeZoneType"/>
+          </xs:sequence>
+     </xs:complexType>
+</xs:schema>

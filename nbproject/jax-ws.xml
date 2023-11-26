@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="WSTransformaBES">
+      <implementation-class>com.telcel.rc.actions.WSTransformaBES</implementation-class>
+    </service>
+  </services>
+  <clients>
+    <client name="v1">
+      <wsdl-url>http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl</wsdl-url>
+      <local-wsdl-file>10.191.133.210_1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">com.telcel.rc.TransformaBES</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>com.telcel.rc.TransformaBES</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+  </clients>
+  <jsr109>false</jsr109>
+</jax-ws>

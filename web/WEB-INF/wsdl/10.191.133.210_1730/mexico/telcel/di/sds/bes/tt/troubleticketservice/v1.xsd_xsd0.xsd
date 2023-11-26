@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?><!--File TroubleTicketService_esb_schema1.xsd, application D16_Trouble_Ticket_v2_TTI001--><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tlc="http://amx.com/mexico/telcel/esb/v1_2" xmlns:tns="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice">
+     <xs:import namespace="http://amx.com/mexico/telcel/esb/v1_2" schemaLocation="http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd1"/>
+     
+     <xs:simpleType name="CadenaAlfanumerica2Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="2"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica256Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="256"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica10Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="10"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica60Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="60"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica200Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="200"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica100Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="100"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica4000Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="4000"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica30Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="30"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica18Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="18"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica50Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="50"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica15Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="15"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica150Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="150"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica40Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="40"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica6Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="6"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica1Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="1"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica35Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="35"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica70Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="70"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica255Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="255"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica64Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="64"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica2000Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="2000"/>
+          </xs:restriction>
+     </xs:simpleType>
+     <xs:simpleType name="CadenaAlfanumerica20Type">
+          <xs:restriction base="xs:string">
+               <xs:minLength value="0"/>
+               <xs:maxLength value="20"/>
+          </xs:restriction>
+     </xs:simpleType>
+	 <xs:simpleType name="Decimal20c0Type">
+          <xs:restriction base="xs:decimal">
+               <xs:totalDigits value="20"/>
+               <xs:fractionDigits value="0"/>
+          </xs:restriction>
+     </xs:simpleType>								   
+     
+     <xs:complexType name="TTlistType">
+          <xs:sequence>
+               <xs:element minOccurs="0" name="cI" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element minOccurs="0" name="reason" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element name="troubleType" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element minOccurs="0" name="processState" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element minOccurs="0" name="nodeName" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element minOccurs="0" name="troubleTitle" type="tns:CadenaAlfanumerica2000Type"/>
+               <xs:element minOccurs="0" name="ttDescription" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element minOccurs="0" name="workItemHandlingrole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element minOccurs="0" name="workItemHandlingStaff" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="workItemHandlingcomment" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element name="servReqSerialNo" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="acceptTime" type="tns:CadenaAlfanumerica30Type"/>
+			   <xs:element minOccurs="0" name="accessCodeRes" type="tns:AccessCodeResType"/>
+               <xs:element minOccurs="0" name="handleNodeRole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element minOccurs="0" name="hanldeNodeStaff" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="handleNodeComment" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element minOccurs="0" name="handleNodeCreateTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element minOccurs="0" name="handleNodeCompleteTime" type="tns:CadenaAlfanumerica30Type"/>																			
+          </xs:sequence>
+     </xs:complexType>
+	 <xs:complexType name="AccessCodeResType">
+          <xs:sequence>
+               <xs:element name="accessCodeType" type="tns:CadenaAlfanumerica1Type"/>
+               <xs:element name="accessOwnerId" type="tns:Decimal20c0Type"/>
+          </xs:sequence>
+     </xs:complexType>										  				  
+     <xs:complexType name="MonitoringTTListType">
+          <xs:sequence>
+               <xs:element name="cI" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element name="reason" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element name="troubleType" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element minOccurs="0" name="nodeName" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element minOccurs="0" name="troubleTitle" type="tns:CadenaAlfanumerica2000Type"/>
+               <xs:element name="ttDescription" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element minOccurs="0" name="workItemHandlingrole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element minOccurs="0" name="workItemHandlingStaff" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="workItemHandlingcomment" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element minOccurs="0" name="workItemCreateTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element name="servReqSerialNo" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element name="acceptTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element name="endAcceptTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element name="acceptStaffNo" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="duplicateFlag" type="tns:CadenaAlfanumerica1Type"/>
+               <xs:element name="externalSystemCaseID" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element minOccurs="0" name="processState" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element minOccurs="0" name="workItemCompleteTime" type="xs:string"/>
+               <xs:element minOccurs="0" name="handleNodeRole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element minOccurs="0" name="hanldeNodeStaff" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="handleNodeComment" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element minOccurs="0" name="handleNodeCreateTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element minOccurs="0" name="handleNodeCompleteTime" type="tns:CadenaAlfanumerica30Type"/>
+               
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="TTOperationsListType">
+          <xs:sequence>
+               <xs:element minOccurs="0" name="acceptTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element minOccurs="0" name="accessNumber" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element minOccurs="0" name="handlingrole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element minOccurs="0" name="handlingStaffNo" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element minOccurs="0" name="handlingTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element minOccurs="0" name="nodeName" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element minOccurs="0" name="operationType" type="tns:CadenaAlfanumerica40Type"/>
+               <xs:element minOccurs="0" name="processState" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element minOccurs="0" name="servReqSerialNo" type="tns:CadenaAlfanumerica20Type"/>
+               <xs:element name="troubleType" type="tns:CadenaAlfanumerica255Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="CreateTT">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataRequestHeaderType"/>
+               <xs:element name="createTT" type="tns:CreateTTPetType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="CreateTTResponse">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailResponse" type="tlc:DetailResponseType"/>
+               <xs:element name="createTTResponse" type="tns:CreateTTRespType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTList">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataRequestHeaderType"/>
+               <xs:element name="queryTTList" type="tns:QueryTTListPetType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTListResponse">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailResponse" type="tlc:DetailResponseType"/>
+               <xs:element name="queryTTListResponse" type="tns:QueryTTListRespType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTDetail">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataRequestHeaderType"/>
+               <xs:element name="queryTTDetail" type="tns:QueryTTDetailPetType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTDetailResponse">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailResponse" type="tlc:DetailResponseType"/>
+               <xs:element name="queryTTDetailResponse" type="tns:QueryTTDetailRespType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="UpdateTT">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataRequestHeaderType"/>
+               <xs:element name="updateTT" type="tns:UpdateTTPetType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="UpdateTTResponse">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailResponse" type="tlc:DetailResponseType"/>
+               <xs:element name="updateTTResponse" type="tns:UpdateTTRespType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryMonitoringTT">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataRequestHeaderType"/>
+               <xs:element name="queryMonitoringTT" type="tns:QueryMonitoringTTPetType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryMonitoringTTResponse">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailResponse" type="tlc:DetailResponseType"/>
+               <xs:element name="queryMonitoringTTResponse" type="tns:QueryMonitoringTTRespType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTOperations">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataRequestHeaderType"/>
+               <xs:element name="queryTTOperations" type="tns:QueryTTOperationsPetType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTOperationsResponse">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailResponse" type="tlc:DetailResponseType"/>
+               <xs:element name="queryTTOperationsResponse" type="tns:QueryTTOperationsRespType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="TroubleTicketServiceException">
+          <xs:sequence>
+               <xs:element name="controlData" type="tlc:ControlDataResponseHeaderType"/>
+               <xs:element name="detailFail" type="tlc:DetailFailType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="CreateTTPetType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystem" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="customerName" type="tns:CadenaAlfanumerica256Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="customerType" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="accessNumber" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="acctNumber" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="troubleTitle" type="tns:CadenaAlfanumerica200Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="troubleType" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="faultLocation" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="mobileNo" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="ttDescription" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="accessoryInfo" type="tns:CadenaAlfanumerica256Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="acceptTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="cURP" type="tns:CadenaAlfanumerica18Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="paymentChannel" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="primaryOffering" type="tns:CadenaAlfanumerica50Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="susbcriptionRegion" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="contactNumber2" type="tns:CadenaAlfanumerica15Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="activationDateofProduct" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="problemProduct" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="problemExampleDates" type="tns:CadenaAlfanumerica150Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="billCycle" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="coordinates" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="street" type="tns:CadenaAlfanumerica50Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="betweenStreets" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="neighborhood" type="tns:CadenaAlfanumerica50Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="municipality" type="tns:CadenaAlfanumerica50Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="state" type="tns:CadenaAlfanumerica40Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="region" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="zipCode" type="tns:CadenaAlfanumerica6Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="country" type="tns:CadenaAlfanumerica40Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="internalFlag" type="tns:CadenaAlfanumerica1Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="donorCarrier" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="donorNumber" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="donorRegion" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="donorPlace" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="recipientCarrier" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="recipientNumber" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="recipientRegion" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="recipientPlace" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="errorCode" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="activationTransationId" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="listenedRecording" type="tns:CadenaAlfanumerica35Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="iMEI" type="tns:CadenaAlfanumerica40Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="technology" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="sIMVersion" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="deviceSoftwareVersion" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="model" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="brand" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="frequency" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="acceptStaffNo" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="duplicateFlag" type="tns:CadenaAlfanumerica1Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="commonPhrases" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="destinationnode" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="destination" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="exampleLines" type="tns:CadenaAlfanumerica50Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workOrder" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="sAMSDialog" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="affectedNetworkElement" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="cI" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="reason" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystemCaseID" type="tns:CadenaAlfanumerica30Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="CreateTTRespType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="servReqSerialNo" type="tlc:CadenaAlfanumerica20Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTListPetType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystem" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="handlingStaff" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="servReqSerialNo" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="startTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="endTime" type="tns:CadenaAlfanumerica30Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTListRespType">
+          <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="tTlist" type="tns:TTlistType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTDetailPetType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="servReqSerialNo" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystem" type="tns:CadenaAlfanumerica2Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTDetailRespType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="0" name="servReqSerialNo" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="customerName" type="tns:CadenaAlfanumerica256Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="customerType" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="customerCategory" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="custSubCategory" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="customerLevel" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="priority" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="accessNumber" type="tns:CadenaAlfanumerica10Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="acctNumber" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="additionalFaultyNbr" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="troubleTitle" type="tns:CadenaAlfanumerica200Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="troubleType" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="faultLocation" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="acceptStaffNo" type="tns:CadenaAlfanumerica64Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="tenantId" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="occurrenceDate" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="deadline" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="mobileNo" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="contactNumber2" type="tns:CadenaAlfanumerica60Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="ttDescription" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="email" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="accessoryInfo" type="tns:CadenaAlfanumerica256Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="acceptTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="expectFeedbackTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="processState" type="tns:CadenaAlfanumerica255Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="nodeName" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workItemDeadLineTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workItemId" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workItemHandlingrole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workItemHandlingStaff" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workItemHandlingcomment" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workItemCompleteTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="workOrder" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="sAMSDialog" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="affectedNetworkElement" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="cI" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="reason" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="externalSystemCaseID" type="tns:CadenaAlfanumerica30Type"/>
+			   <xs:element maxOccurs="1" minOccurs="0" name="handleNodeRole" type="tns:CadenaAlfanumerica70Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="hanldeNodeStaff" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="handleNodeComment" type="tns:CadenaAlfanumerica4000Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="handleNodeCreateTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="handleNodeCompleteTime" type="tns:CadenaAlfanumerica30Type"/>																								  																									  
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="UpdateTTPetType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="servReqSerialNo" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystem" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="cI" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="reason" type="tns:CadenaAlfanumerica100Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="ttDescription" type="tns:CadenaAlfanumerica2000Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="externalSystemCaseID" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="operation" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="handlingrole" type="tns:CadenaAlfanumerica70Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="UpdateTTRespType">
+          <xs:sequence/>
+     </xs:complexType>
+     <xs:complexType name="QueryMonitoringTTPetType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystem" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="node" type="tns:CadenaAlfanumerica1Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="startTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="endTime" type="tns:CadenaAlfanumerica30Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryMonitoringTTRespType">
+          <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="monitoringTTlist" type="tns:MonitoringTTListType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTOperationsPetType">
+          <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="endTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="externalSystem" type="tns:CadenaAlfanumerica2Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="handlingStaffNo" type="tlc:CadenaAlfanumerica20Type"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="startTime" type="tns:CadenaAlfanumerica30Type"/>
+               <xs:element maxOccurs="1" minOccurs="0" name="troubleType" type="tns:CadenaAlfanumerica60Type"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:complexType name="QueryTTOperationsRespType">
+          <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="tTOperationsList" type="tns:TTOperationsListType"/>
+          </xs:sequence>
+     </xs:complexType>
+     <xs:element ibmSchExtn:docRoot="true" name="createTT" type="tns:CreateTT"/>
+     <xs:element ibmSchExtn:docRoot="true" name="createTTResponse" type="tns:CreateTTResponse"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryTTList" type="tns:QueryTTList"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryTTListResponse" type="tns:QueryTTListResponse"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryTTDetail" type="tns:QueryTTDetail"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryTTDetailResponse" type="tns:QueryTTDetailResponse"/>
+     <xs:element ibmSchExtn:docRoot="true" name="updateTT" type="tns:UpdateTT"/>
+     <xs:element ibmSchExtn:docRoot="true" name="updateTTResponse" type="tns:UpdateTTResponse"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryMonitoringTT" type="tns:QueryMonitoringTT"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryMonitoringTTResponse" type="tns:QueryMonitoringTTResponse"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryTTOperations" type="tns:QueryTTOperations"/>
+     <xs:element ibmSchExtn:docRoot="true" name="queryTTOperationsResponse" type="tns:QueryTTOperationsResponse"/>
+     <xs:element name="generalException" type="tns:TroubleTicketServiceException"/>
+     <xs:element name="createTTPeticion" type="tns:CreateTTPetType"/>
+     <xs:element name="queryTTListPeticion" type="tns:QueryTTListPetType"/>
+     <xs:element name="queryTTDetailPeticion" type="tns:QueryTTDetailPetType"/>
+     <xs:element name="updateTTPeticion" type="tns:UpdateTTPetType"/>
+     <xs:element name="queryMonitoringTTPeticion" type="tns:QueryMonitoringTTPetType"/>
+     <xs:element name="queryTTOperationsPeticion" type="tns:QueryTTOperationsPetType"/>
+</xs:schema>

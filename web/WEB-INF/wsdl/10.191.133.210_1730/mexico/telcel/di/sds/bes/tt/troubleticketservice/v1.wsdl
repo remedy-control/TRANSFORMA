@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!--File TroubleTicketService_esb.wsdl, application D16_Trouble_Ticket_v2_TTI001--><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="TroubleTicketService" targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+     <wsdl:documentation>
+          <wsdl:appinfo source="WMQI_APPINFO">
+               <MRWSDLAppInfo imported="true">
+                    <binding hasEncoding="false" imported="true" name="TroubleTicketServiceHttpBinding" originalBindingStyle="document"/>
+               </MRWSDLAppInfo>
+          </wsdl:appinfo>
+     </wsdl:documentation>
+     
+     <wsdl:types>
+          <xsd:schema targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice">
+               <xsd:include schemaLocation="http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1?xsd=xsd0"/>
+          </xsd:schema>
+     </wsdl:types>
+     <wsdl:message name="createTTRequest">
+          <wsdl:part element="tns:createTT" name="createTTRequest"/>
+     </wsdl:message>
+     <wsdl:message name="createTTResponse">
+          <wsdl:part element="tns:createTTResponse" name="createTTResponse"/>
+     </wsdl:message>
+     <wsdl:message name="queryTTListRequest">
+          <wsdl:part element="tns:queryTTList" name="queryTTListRequest"/>
+     </wsdl:message>
+     <wsdl:message name="queryTTListResponse">
+          <wsdl:part element="tns:queryTTListResponse" name="queryTTListResponse"/>
+     </wsdl:message>
+     <wsdl:message name="queryTTDetailRequest">
+          <wsdl:part element="tns:queryTTDetail" name="queryTTDetailRequest"/>
+     </wsdl:message>
+     <wsdl:message name="queryTTDetailResponse">
+          <wsdl:part element="tns:queryTTDetailResponse" name="queryTTDetailResponse"/>
+     </wsdl:message>
+     <wsdl:message name="updateTTRequest">
+          <wsdl:part element="tns:updateTT" name="updateTTRequest"/>
+     </wsdl:message>
+     <wsdl:message name="updateTTResponse">
+          <wsdl:part element="tns:updateTTResponse" name="updateTTResponse"/>
+     </wsdl:message>
+     <wsdl:message name="queryMonitoringTTRequest">
+          <wsdl:part element="tns:queryMonitoringTT" name="queryMonitoringTTRequest"/>
+     </wsdl:message>
+     <wsdl:message name="queryMonitoringTTResponse">
+          <wsdl:part element="tns:queryMonitoringTTResponse" name="queryMonitoringTTResponse"/>
+     </wsdl:message>
+     <wsdl:message name="queryTTOperationsRequest">
+          <wsdl:part element="tns:queryTTOperations" name="queryTTOperationsRequest"/>
+     </wsdl:message>
+     <wsdl:message name="queryTTOperationsResponse">
+          <wsdl:part element="tns:queryTTOperationsResponse" name="queryTTOperationsResponse"/>
+     </wsdl:message>
+     <wsdl:message name="generalException">
+          <wsdl:part element="tns:generalException" name="generalException"/>
+     </wsdl:message>
+     <wsdl:portType name="TroubleTicketService">
+          <wsdl:operation name="createTT">
+               <wsdl:input message="tns:createTTRequest" name="createTTRequest"/>
+               <wsdl:output message="tns:createTTResponse" name="createTTResponse"/>
+               <wsdl:fault message="tns:generalException" name="generalException"/>
+          </wsdl:operation>
+          <wsdl:operation name="queryTTList">
+               <wsdl:input message="tns:queryTTListRequest" name="queryTTListRequest"/>
+               <wsdl:output message="tns:queryTTListResponse" name="queryTTListResponse"/>
+               <wsdl:fault message="tns:generalException" name="generalException"/>
+          </wsdl:operation>
+          <wsdl:operation name="queryTTDetail">
+               <wsdl:input message="tns:queryTTDetailRequest" name="queryTTDetailRequest"/>
+               <wsdl:output message="tns:queryTTDetailResponse" name="queryTTDetailResponse"/>
+               <wsdl:fault message="tns:generalException" name="generalException"/>
+          </wsdl:operation>
+          <wsdl:operation name="updateTT">
+               <wsdl:input message="tns:updateTTRequest" name="updateTTRequest"/>
+               <wsdl:output message="tns:updateTTResponse" name="updateTTResponse"/>
+               <wsdl:fault message="tns:generalException" name="generalException"/>
+          </wsdl:operation>
+          <wsdl:operation name="queryMonitoringTT">
+               <wsdl:input message="tns:queryMonitoringTTRequest" name="queryMonitoringTTRequest"/>
+               <wsdl:output message="tns:queryMonitoringTTResponse" name="queryMonitoringTTResponse"/>
+               <wsdl:fault message="tns:generalException" name="generalException"/>
+          </wsdl:operation>
+          <wsdl:operation name="queryTTOperations">
+               <wsdl:input message="tns:queryTTOperationsRequest" name="queryTTOperationsRequest"/>
+               <wsdl:output message="tns:queryTTOperationsResponse" name="queryTTOperationsResponse"/>
+               <wsdl:fault message="tns:generalException" name="generalException"/>
+          </wsdl:operation>
+     </wsdl:portType>
+     <wsdl:binding name="TroubleTicketServiceHttpBinding" type="tns:TroubleTicketService">
+          <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+          <wsdl:operation name="createTT">
+               <soap:operation soapAction="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice/createTT"/>
+               <wsdl:input name="createTTRequest">
+                    <soap:body use="literal"/>
+               </wsdl:input>
+               <wsdl:output name="createTTResponse">
+                    <soap:body use="literal"/>
+               </wsdl:output>
+               <wsdl:fault name="generalException">
+                    <soap:fault name="generalException" use="literal"/>
+               </wsdl:fault>
+          </wsdl:operation>
+          <wsdl:operation name="queryTTList">
+               <soap:operation soapAction="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice/queryTTList"/>
+               <wsdl:input name="queryTTListRequest">
+                    <soap:body use="literal"/>
+               </wsdl:input>
+               <wsdl:output name="queryTTListResponse">
+                    <soap:body use="literal"/>
+               </wsdl:output>
+               <wsdl:fault name="generalException">
+                    <soap:fault name="generalException" use="literal"/>
+               </wsdl:fault>
+          </wsdl:operation>
+          <wsdl:operation name="queryTTDetail">
+               <soap:operation soapAction="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice/queryTTDetail"/>
+               <wsdl:input name="queryTTDetailRequest">
+                    <soap:body use="literal"/>
+               </wsdl:input>
+               <wsdl:output name="queryTTDetailResponse">
+                    <soap:body use="literal"/>
+               </wsdl:output>
+               <wsdl:fault name="generalException">
+                    <soap:fault name="generalException" use="literal"/>
+               </wsdl:fault>
+          </wsdl:operation>
+          <wsdl:operation name="updateTT">
+               <soap:operation soapAction="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice/updateTT"/>
+               <wsdl:input name="updateTTRequest">
+                    <soap:body use="literal"/>
+               </wsdl:input>
+               <wsdl:output name="updateTTResponse">
+                    <soap:body use="literal"/>
+               </wsdl:output>
+               <wsdl:fault name="generalException">
+                    <soap:fault name="generalException" use="literal"/>
+               </wsdl:fault>
+          </wsdl:operation>
+          <wsdl:operation name="queryMonitoringTT">
+               <soap:operation soapAction="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice/queryMonitoringTT"/>
+               <wsdl:input name="queryMonitoringTTRequest">
+                    <soap:body use="literal"/>
+               </wsdl:input>
+               <wsdl:output name="queryMonitoringTTResponse">
+                    <soap:body use="literal"/>
+               </wsdl:output>
+               <wsdl:fault name="generalException">
+                    <soap:fault name="generalException" use="literal"/>
+               </wsdl:fault>
+          </wsdl:operation>
+          <wsdl:operation name="queryTTOperations">
+               <soap:operation soapAction="http://www.amx.com.mx/mexico/telcel/di/sds/bes/tt/esb/troubleticketservice/queryTTOperations"/>
+               <wsdl:input name="queryTTOperationsRequest">
+                    <soap:body use="literal"/>
+               </wsdl:input>
+               <wsdl:output name="queryTTOperationsResponse">
+                    <soap:body use="literal"/>
+               </wsdl:output>
+               <wsdl:fault name="generalException">
+                    <soap:fault name="generalException" use="literal"/>
+               </wsdl:fault>
+          </wsdl:operation>
+     </wsdl:binding>
+     <wsdl:service name="TroubleTicketServiceHttpService">
+          <wsdl:port binding="tns:TroubleTicketServiceHttpBinding" name="TroubleTicketServiceHttpPort">
+               <soap:address location="http://10.191.133.210:1730/mexico/telcel/di/sds/bes/tt/troubleticketservice/v1"/>
+          </wsdl:port>
+     </wsdl:service>
+</wsdl:definitions>
