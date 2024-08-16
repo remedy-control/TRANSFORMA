@@ -6,10 +6,10 @@
 
 package com.telcel.rc.actions;
 
-import com.telcel.rc.TransformaBES.ControlDataResponseHeaderType;
-import com.telcel.rc.TransformaBES.DetailResponseType;
-import com.telcel.rc.TransformaBES.ErrorType;
-import com.telcel.rc.TransformaBES.UpdateTTRespType;
+import TransformaBES.ControlDataResponseHeaderType;
+import TransformaBES.DetailResponseType;
+import TransformaBES.ErrorType;
+import TransformaBES.UpdateTTRespType;
 import java.util.List;
 import javax.xml.ws.Holder;
 
